@@ -15,7 +15,7 @@ class ListsController < ProtectedController
 
   # POST /lists
   def create
-    @list = current_user.lists.build(expense_params)
+    @list = current_user.list.build(list_params)
 
     if @list.save
       render json: @list, status: :created, location: @list
